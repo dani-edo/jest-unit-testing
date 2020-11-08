@@ -1,5 +1,30 @@
 const functions = require("./functions");
 
+// pemanggilan di setiap test di bawah dijalankan
+// beforeEach(() => initDatabase());
+// afterEach(() => closeDatabase());
+
+// pemanggilan di sebelum dan setlah seluruh test di bawah ini dijalankan
+// beforeAll(() => initDatabase());
+// afterAll(() => closeDatabase());
+
+// const initDatabase = () => console.log("Database Initialized...");
+// const closeDatabase = () => console.log("Database Closed...");
+
+// group of test
+const nameCheck = () => console.log("Checking name...");
+describe("Checking names", () => {
+  beforeEach(() => nameCheck());
+  test("check name scoped", () => {
+    const user = "Dani";
+    expect(user).toBe("Dani");
+  });
+  test("check name scoped", () => {
+    const user = "Dani";
+    expect(user).toBe("Dani");
+  });
+});
+
 // toBe (for primitive type)
 test("2 + 2 sama denan 4 ra yo?", () => {
   expect(functions.add(2, 2)).toBe(4); //expected value to be 4 (if you change this, it'll be error )
